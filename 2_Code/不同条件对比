@@ -34,7 +34,7 @@ plt.figure(figsize=(10, 6))
 
 for label, (t, y, yerr) in conditions.items():
     gp = build_gp(log_tau_best, log_sigma_best)
-    gp.compute(t, diag=yerr**2)  # ✅ 修正点
+    gp.compute(t, diag=yerr**2)  # 
     mu, var = gp.predict(y, t_all, return_var=True)
     std = np.sqrt(var)
 
